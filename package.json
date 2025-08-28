@@ -1,0 +1,51 @@
+{
+  "name": "time-show",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "start": "npx electron .",
+    "start:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && npx electron .\"",
+    "build": "vite build",
+    "dist": "npm run build && electron-builder",
+    "build-and-start": "npm run build && npx electron ."
+  },
+  "dependencies": {
+    "vue": "^3.5.18"
+  },
+  "main": "main.cjs",
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "^22.16.5",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/tsconfig": "^0.7.0",
+    "concurrently": "^9.2.1",
+    "electron": "^37.4.0",
+    "electron-builder": "^26.0.12",
+    "prettier": "3.6.2",
+    "typescript": "~5.8.0",
+    "vite": "^7.0.6",
+    "vue-tsc": "^3.0.4",
+    "wait-on": "^8.0.4"
+  },
+  "build": {
+    "appId": "com.time.show",
+    "productName": "time-show",
+    "files": [
+      "dist/**",
+      "main.cjs",
+      "preload.js",
+      "public/clock.png"
+    ],
+    "directories": {
+      "buildResources": "public"
+    },
+    "win": {
+      "icon": "public/clock.png"
+    }
+  }
+}
