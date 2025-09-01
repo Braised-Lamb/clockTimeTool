@@ -132,5 +132,3 @@ If UAC cancelled -> message: Operation cancelled by user
 | npm run dist            | Build & package via electron-builder |
 
 ---
-
-Contributions / tweaks welcome.

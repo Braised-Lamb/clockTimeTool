@@ -103,5 +103,3 @@ npm run dist        # 打包分发
 | npm run dist            | 打包发布                 |
 
 ---
-
-欢迎继续补充与精简。
